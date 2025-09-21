@@ -1,0 +1,24 @@
+type Vehicle {
+  id: ID
+  modelName: String!
+  companyName: String!
+  mileage: Int!
+  makeYear: String! 
+}
+
+input AddVehicleInput {
+  modelName: String!
+  companyName: String!
+  mileage: Int!
+  makeYear: String!
+}
+
+type Mutation {
+  addVehicle(vehicle: AddVehicleInput!): Vehicle!
+}
+
+type Query {
+  hello: String!
+  getVehicle(modelName: String) : [Vehicle]
+  getAllVehicles : [Vehicle]
+}
