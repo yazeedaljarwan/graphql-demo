@@ -96,3 +96,19 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+
+curls : 
+  for adding a vehicle to db: curl -X POST http://localhost:3000/graphql   -H "Content-Type: application/json"   -d '{
+    "query": "mutation { addVehicle(vehicle: { modelName: \"Camry\", companyName: \"Toyota\", mileage: 112000, makeYear: \"2022\" }) { id modelName companyName mileage makeYear } }"
+  }'
+for getting vehicles by model name : curl -X POST http://localhost:3000/graphql   -H "Content-Type: application/json"   -d '{
+    "query": "query { getVehicle(modelName: \"Sunny\") { id modelName companyName mileage  } }"
+  }'
+for getting all vehicles in db: curl -X POST http://localhost:3000/graphql   -H "Content-Type: application/json"   -d '{
+    "query": "query { getAllVehicles { id modelName companyName mileage makeYear } }"
+  }'
+
+
+    
